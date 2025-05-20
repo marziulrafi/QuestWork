@@ -1,19 +1,20 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Link } from 'react-router';
+import React, { use, useState } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
+import { Link } from 'react-router';
+
 
 const MyTasks = () => {
-    const { user } = useContext(AuthContext);
+    const { user } = use(AuthContext);
     const [tasks, setTasks] = useState([]);
 
-    useEffect(() => {
-        if (user?.email) {
-            fetch(`http://localhost:3000/tasks?email=${user.email}`)
-                .then(res => res.json())
-                .then(data => setTasks(data))
-                .catch(err => console.error(err));
-        }
-    }, [user]);
+    if (tasks.length === 0 && user?.email) {
+        fetch(`http://localhost:3000/tasks?email=${user.email}`)
+            .then(res => res.json())
+            .then(data => setTasks(data))
+            .catch(err => console.error("Error fetching my tasks:", err));
+    }
+
+   
 
     return (
         <div className="max-w-6xl mx-auto mt-6 p-4">
@@ -36,7 +37,7 @@ const MyTasks = () => {
                                 <td>${task.budget}</td>
                                 <td className="space-x-2">
                                     <Link to={`/update/${task._id}`} className="btn btn-sm btn-info">Update</Link>
-                                    <button className="btn btn-sm btn-error">Delete</button>
+                                    <button onClick={() => (task._id)} className="btn btn-sm btn-error">Delete</button>
                                     <Link to={`/bids/${task._id}`} className="btn btn-sm btn-secondary">Bids</Link>
                                 </td>
                             </tr>

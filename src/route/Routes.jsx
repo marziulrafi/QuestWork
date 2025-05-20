@@ -49,6 +49,10 @@ const router = createBrowserRouter([
             {
                 path: "/update/:id",
                 element: <PrivateRoute><UpdateTask /></PrivateRoute>
+            },
+            {
+                path: "/bids/:id",
+                element: <PrivateRoute><div className="text-center mt-20 text-xl">Bids Page</div></PrivateRoute>
             }
         ]
     },
