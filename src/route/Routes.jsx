@@ -6,7 +6,12 @@ import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
-import PrivateRoute from "../provider/PrivateRoute"
+import PrivateRoute from "../provider/PrivateRoute";
+import AddTask from "../pages/AddTask";
+import BrowseTasks from "../pages/BrowseTasks";
+import MyTasks from "../pages/MyTasks";
+import TaskDetails from "../pages/TaskDetails";
+import UpdateTask from "../pages/UpdateTask";
 
 const router = createBrowserRouter([
     {
@@ -25,21 +30,27 @@ const router = createBrowserRouter([
                 path: "/register",
                 element: <Register />
             },
-
             {
-                path:"/add-task",
-                element: <PrivateRoute>Add Task Page</PrivateRoute>
+                path: "/add-task",
+                element: <PrivateRoute><AddTask /></PrivateRoute>
             },
             {
-                path:"/browse-tasks",
-                element: <PrivateRoute>Browse Tasks Page</PrivateRoute>
+                path: "/browse-tasks",
+                element: <PrivateRoute><BrowseTasks /></PrivateRoute>
             },
             {
-                path:"/my-posted-tasks",
-                element: <PrivateRoute>My Tasks Page</PrivateRoute>
+                path: "/my-posted-tasks",
+                element: <PrivateRoute><MyTasks /></PrivateRoute>
+            },
+            {
+                path: "/task/:id",
+                element: <PrivateRoute><TaskDetails /></PrivateRoute>
+            },
+            {
+                path: "/update/:id",
+                element: <PrivateRoute><UpdateTask /></PrivateRoute>
             }
         ]
-
     },
 ]);
 

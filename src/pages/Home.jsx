@@ -34,7 +34,7 @@ const Home = () => {
                         <div className="text-white text-center px-6 py-4 bg-black/50 backdrop-blur-sm rounded-md shadow-md max-w-xl">
                             <h2 className="text-4xl font-bold mb-2">Find the Perfect Task</h2>
                             <p className="text-lg mb-4">Browse tasks from various categories and earn today!</p>
-                            <Link to="/browse-tasks" className="btn-primary">Explore Tasks</Link>
+                        
                         </div>
                     </div>
                 </SwiperSlide>
@@ -49,7 +49,7 @@ const Home = () => {
                         <div className="text-white text-center px-6 py-4 bg-black/50 backdrop-blur-sm rounded-md shadow-md max-w-xl">
                             <h2 className="text-4xl font-bold mb-2">Post Your Task</h2>
                             <p className="text-lg mb-4">Need something done? Post your task and get it completed fast.</p>
-                            <Link to="/add-task" className="btn-primary">Post a Task</Link>
+                            
                         </div>
                     </div>
                 </SwiperSlide>

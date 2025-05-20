@@ -1,9 +1,6 @@
 import React, { useRef, useState, use } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router';
 import { AuthContext } from '../provider/AuthProvider';
-import { toast } from 'react-toastify';
-import { sendPasswordResetEmail } from 'firebase/auth';
-import { auth } from '../firebase.init';
 
 const Login = () => {
     const [errorMessage, setErrorMessage] = useState('');
@@ -40,19 +37,6 @@ const Login = () => {
             });
     };
 
-    const handleForgotPassword = () => {
-        const email = emailRef.current.value;
-
-        setErrorMessage('');
-
-        sendPasswordResetEmail(auth, email)
-            .then(() => {
-                toast.success('A Password Reset mail has been sent to your email.');
-            })
-            .catch((error) => {
-                setErrorMessage(error.message);
-            });
-    };
 
     return (
         <div className="card bg-base-100 w-full max-w-sm mx-auto mt-12 mb-12 shrink-0 shadow-2xl">
@@ -64,7 +48,7 @@ const Login = () => {
                     <label className="label">Password</label>
                     <input type="password" className="input" name="password" placeholder="Password" />
                     <div>
-                        <Link onClick={handleForgotPassword} className="link link-hover">
+                        <Link className="link link-hover">
                             Forgot password?
                         </Link>
                     </div>
