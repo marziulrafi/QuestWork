@@ -39,7 +39,7 @@ const router = createBrowserRouter([
                 element: <PrivateRoute><BrowseTasks /></PrivateRoute>
             },
             {
-                path: "/my-posted-tasks",
+                path: "/my-tasks",
                 element: <PrivateRoute><MyTasks /></PrivateRoute>
             },
             {
