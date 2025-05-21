@@ -12,6 +12,7 @@ import BrowseTasks from "../pages/BrowseTasks";
 import MyTasks from "../pages/MyTasks";
 import TaskDetails from "../pages/TaskDetails";
 import UpdateTask from "../pages/UpdateTask";
+import NotFound from "../components/NotFound";
 
 const router = createBrowserRouter([
     {
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
             {
                 path: "/bids/:id",
                 element: <PrivateRoute><div className="text-center mt-20 text-xl">Bids Page</div></PrivateRoute>
+            },
+            {
+                path: '/*',
+                element: <NotFound />
             }
         ]
     },
