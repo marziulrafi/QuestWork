@@ -1,16 +1,8 @@
-import React, { useState } from 'react';
-import { useParams } from 'react-router';
+import React from 'react';
+import { useLoaderData } from 'react-router';
 
 const TaskDetails = () => {
-    const { id } = useParams();
-    const [task, setTask] = useState(null);
-
-    if (!task) {
-        fetch(`http://localhost:3000/tasks/${id}`)
-            .then(res => res.json())
-            .then(data => setTask(data))
-            .catch(err => console.error(err));
-    }
+    const task = useLoaderData();
 
     return (
         <div className="max-w-3xl mx-auto mt-6 p-6 bg-white shadow rounded">
@@ -25,7 +17,7 @@ const TaskDetails = () => {
                     <p><strong>Posted by:</strong> {task.username} ({task.email})</p>
                 </div>
             ) : (
-                <p>Loading task...</p>
+            <p>Loading task...</p>
             )}
         </div>
     );

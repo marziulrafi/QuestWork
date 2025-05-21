@@ -36,6 +36,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/browse-tasks",
+                loader: () => fetch('http://localhost:3000/tasks'),
                 element: <PrivateRoute><BrowseTasks /></PrivateRoute>
             },
             {
@@ -44,10 +45,12 @@ const router = createBrowserRouter([
             },
             {
                 path: "/task/:id",
+                loader: ({ params }) => fetch(`http://localhost:3000/tasks/${params.id}`),
                 element: <PrivateRoute><TaskDetails /></PrivateRoute>
             },
             {
                 path: "/update/:id",
+                loader: ({ params }) => fetch(`http://localhost:3000/tasks/${params.id}`),
                 element: <PrivateRoute><UpdateTask /></PrivateRoute>
             },
             {

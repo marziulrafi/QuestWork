@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 const AddTask = () => {
     const { user } = use(AuthContext);
 
-    const handleAddTask = (e) => {
+    const handleAddTask = e => {
         e.preventDefault();
 
         const form = e.target;
@@ -27,7 +27,7 @@ const AddTask = () => {
                 if (data.insertedId) {
                     Swal.fire({
                         icon: 'success',
-                        title: '✅ Task added successfully!',
+                        title: 'Task added successfully ✅',
                     });
                     form.reset();
                 }
@@ -45,7 +45,7 @@ const AddTask = () => {
                     <input type="date" name="deadline" required className="input input-bordered w-full" />
                 </div>
                 <select name="category" required className="select select-bordered w-full">
-                    <option value="" disabled>Select Category</option>
+                    <option value="" >Select Category</option>
                     <option>Web Development</option>
                     <option>Graphic Design</option>
                     <option>Digital Marketing</option>

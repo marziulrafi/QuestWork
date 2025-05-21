@@ -11,7 +11,7 @@ const Navbar = () => {
             <li><NavLink to="/" className='font-semibold'>Home</NavLink></li>
             <li><NavLink to="/add-task" className='font-semibold'>Add Task</NavLink></li>
             <li><NavLink to="/browse-tasks" className='font-semibold'>Browse Tasks</NavLink></li>
-            <li><NavLink to="/my-posted-tasks" className='font-semibold'>My Posted Tasks</NavLink></li>
+            <li><NavLink to="/my-tasks" className='font-semibold'>My Posted Tasks</NavLink></li>
         </>
     );
 
