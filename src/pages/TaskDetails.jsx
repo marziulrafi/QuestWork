@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router';
+import Loading from '../components/Loading';
 
 const TaskDetails = () => {
     const task = useLoaderData();
@@ -17,7 +18,9 @@ const TaskDetails = () => {
                     <p><strong>Posted by:</strong> {task.username} ({task.email})</p>
                 </div>
             ) : (
-            <p>Loading task...</p>
+                <div>
+                    <Loading />
+                </div>
             )}
         </div>
     );
