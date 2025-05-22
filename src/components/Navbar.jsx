@@ -12,16 +12,10 @@ const Navbar = () => {
             <li><NavLink to="/add-task" className="font-semibold">Add Task</NavLink></li>
             <li><NavLink to="/browse-tasks" className="font-semibold">Browse Tasks</NavLink></li>
             <li><NavLink to="/my-tasks" className="font-semibold">My Posted Tasks</NavLink></li>
-            {!user && (
-                <>
-                    <li><NavLink to="/register" className="font-semibold">Register</NavLink></li>
-                    <li><NavLink to="/login" className="font-semibold">Login</NavLink></li>
-                </>
-            )}
         </>
     );
 
-    const authLinksDesktop = (
+    const authLinks = (
         <>
             <li><NavLink to="/register" className="font-semibold">Register</NavLink></li>
             <li><NavLink to="/login" className="font-semibold">Login</NavLink></li>
@@ -77,7 +71,7 @@ const Navbar = () => {
                     </div>
                 ) : (
                     <ul className="menu menu-horizontal px-1 hidden lg:flex">
-                        {authLinksDesktop}
+                        {authLinks}
                     </ul>
                 )}
             </div>

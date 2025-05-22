@@ -15,7 +15,7 @@ const Home = () => {
     }, []);
 
     return (
-        <div>
+        <div className='px-4 space-y-12'>
             <Swiper
                 spaceBetween={30}
                 slidesPerView={1}
@@ -55,8 +55,8 @@ const Home = () => {
                 </SwiperSlide>
             </Swiper>
 
-            <div className="my-10">
-                <h2 className="text-3xl font-bold mb-4">🔥 Featured Tasks</h2>
+            <div className="my-16">
+                <h2 className="text-3xl text-center font-bold mb-10">Featured Tasks</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                     {featuredTasks.length > 0 ? (
                         featuredTasks.map((task) => (
@@ -67,7 +67,7 @@ const Home = () => {
                                 <p className="text-sm text-gray-500">⏳ {task.deadline}</p>
                                 <Link
                                     to={`/task/${task._id}`}
-                                    className="btn-primary mt-4 block text-center"
+                                    className="btn btn-primary mt-8 flex items-center text-center font-bold"
                                 >
                                     See Details
                                 </Link>

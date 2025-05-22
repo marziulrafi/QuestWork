@@ -1,20 +1,41 @@
-import React, { use, useState } from 'react';
+import React, { use, useState, useEffect } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import { Link } from 'react-router';
-
 
 const MyTasks = () => {
     const { user } = use(AuthContext);
     const [tasks, setTasks] = useState([]);
 
-    if (tasks.length === 0 && user?.email) {
-        fetch(`http://localhost:3000/tasks?email=${user.email}`)
-            .then(res => res.json())
-            .then(data => setTasks(data))
-            .catch(err => console.error("Error fetching my tasks:", err));
-    }
+    useEffect(() => {
+        if (user?.email) {
+            fetch(`http://localhost:3000/tasks?email=${user.email}`)
+                .then(res => res.json())
+                .then(data => setTasks(data))
+                .catch(err => console.error("Error fetching my tasks:", err));
+        }
+    }, [user]);
 
-   
+    const handleDelete = (id) => {
+        const confirmDelete = window.confirm('Are you sure you want to delete this task?');
+        if (!confirmDelete) return;
+
+        fetch(`http://localhost:3000/tasks/${id}`, {
+            method: 'DELETE',
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount > 0) {
+                    alert('Task deleted successfully!');
+                    setTasks(prevTasks => prevTasks.filter(task => task._id !== id));
+                } else {
+                    alert('Failed to delete the task.');
+                }
+            })
+            .catch(error => {
+                console.error('Error deleting task:', error);
+                alert('An error occurred while deleting the task.');
+            });
+    };
 
     return (
         <div className="max-w-6xl mx-auto mt-6 p-4">
@@ -37,7 +58,9 @@ const MyTasks = () => {
                                 <td>${task.budget}</td>
                                 <td className="space-x-2">
                                     <Link to={`/update/${task._id}`} className="btn btn-sm btn-info">Update</Link>
-                                    <button onClick={() => (task._id)} className="btn btn-sm btn-error">Delete</button>
+                                    <button onClick={() => handleDelete(task._id)} className="btn btn-sm btn-error">
+                                        Delete
+                                    </button>
                                     <Link to={`/bids/${task._id}`} className="btn btn-sm btn-secondary">Bids</Link>
                                 </td>
                             </tr>
