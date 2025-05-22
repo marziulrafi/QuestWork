@@ -34,7 +34,7 @@ const Home = () => {
                         <div className="text-white text-center px-6 py-4 bg-black/50 backdrop-blur-sm rounded-md shadow-md max-w-xl">
                             <h2 className="text-4xl font-bold mb-2">Find the Perfect Task</h2>
                             <p className="text-lg mb-4">Browse tasks from various categories and earn today!</p>
-                        
+
                         </div>
                     </div>
                 </SwiperSlide>
@@ -49,7 +49,7 @@ const Home = () => {
                         <div className="text-white text-center px-6 py-4 bg-black/50 backdrop-blur-sm rounded-md shadow-md max-w-xl">
                             <h2 className="text-4xl font-bold mb-2">Post Your Task</h2>
                             <p className="text-lg mb-4">Need something done? Post your task and get it completed fast.</p>
-                            
+
                         </div>
                     </div>
                 </SwiperSlide>
@@ -60,14 +60,14 @@ const Home = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                     {featuredTasks.length > 0 ? (
                         featuredTasks.map((task) => (
-                            <div key={task._id} className="bg-white p-5 rounded-xl shadow-md hover:shadow-lg transition-all">
+                            <div key={task._id} className="bg-green-200 p-5 rounded-xl shadow-md hover:shadow-lg transition-all">
                                 <h3 className="font-semibold text-xl mb-2">{task.title}</h3>
                                 <p className="text-gray-600">{task.description.substring(0, 80)}...</p>
                                 <p className="font-bold mt-2">💰 ${task.budget}</p>
-                                <p className="text-sm text-gray-500">⏳ {task.deadline}</p>
+                                <p className="text-sm text-gray-600">⏳ {task.deadline}</p>
                                 <Link
                                     to={`/task/${task._id}`}
-                                    className="btn btn-primary mt-8 flex items-center text-center font-bold"
+                                    className="btn mt-8 flex items-center text-center font-bold"
                                 >
                                     See Details
                                 </Link>
@@ -85,7 +85,7 @@ const Home = () => {
                     <h3 className="font-bold text-xl mb-2">Browse Tasks</h3>
                     <p>Find tasks that match your skills and interests.</p>
                 </div>
-                <div className="bg-green-100 p-6 rounded-lg text-center">
+                <div className="bg-fuchsia-100 p-6 rounded-lg text-center">
                     <img src="/assets/images/post.png" alt="Post" className="w-16 h-16 mx-auto mb-4" />
                     <h3 className="font-bold text-xl mb-2">Post a Task</h3>
                     <p>Get your work done by skilled freelancers in no time.</p>

@@ -38,30 +38,30 @@ const MyTasks = () => {
     };
 
     return (
-        <div className="max-w-6xl mx-auto mt-6 p-4">
-            <h2 className="text-2xl font-bold mb-4">My Posted Tasks</h2>
+        <div className="max-w-6xl mx-auto mt-6 p-4 flex flex-col justify-center items-center">
+            <h2 className="text-2xl font-bold mb-8">My Posted Tasks</h2>
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     <thead>
-                        <tr>
+                        <tr className='text-center'>
                             <th>Title</th>
                             <th>Deadline</th>
                             <th>Budget</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className='text-center'>
                         {tasks.map(task => (
                             <tr key={task._id}>
                                 <td>{task.title}</td>
                                 <td>{task.deadline}</td>
                                 <td>${task.budget}</td>
                                 <td className="space-x-2">
-                                    <Link to={`/update/${task._id}`} className="btn btn-sm btn-info">Update</Link>
-                                    <button onClick={() => handleDelete(task._id)} className="btn btn-sm btn-error">
+                                    <Link to={`/update/${task._id}`} className="btn btn-sm bg-green-400">Update</Link>
+                                    <button onClick={() => handleDelete(task._id)} className="btn btn-sm bg-red-500">
                                         Delete
                                     </button>
-                                    <Link to={`/bids/${task._id}`} className="btn btn-sm btn-secondary">Bids</Link>
+                                    <Link to={`/bids/${task._id}`} className="btn btn-sm bg-blue-400">Bids</Link>
                                 </td>
                             </tr>
                         ))}
