@@ -17,7 +17,7 @@ const Home = () => {
     return (
         <div className='px-4 space-y-12'>
 
-            
+
             <Swiper
                 spaceBetween={30}
                 slidesPerView={1}
@@ -60,7 +60,7 @@ const Home = () => {
                     <div
                         className="relative w-full h-[500px] bg-cover bg-center flex items-center justify-center"
                         style={{
-                            backgroundImage: `url('https://plus.unsplash.com/premium_photo-1675842663249-a8b70103dbaa?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`
+                            backgroundImage: `url('https://plus.unsplash.com/premium_photo-1665656474850-d2a0db61fe26?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`
                         }}
                     >
                         <div className="text-white text-center px-6 py-4 bg-black/30 backdrop-blur-sm rounded-md shadow-md max-w-xl">
@@ -121,25 +121,89 @@ const Home = () => {
             </section>
 
 
-            <section>
-                <div className="bg-gray-100 p-10 rounded-lg mb-16">
-                    <h2 className="text-3xl font-bold mb-4 text-center">Why Choose QuestWork?</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div className="p-6 bg-white rounded-lg shadow-md text-center">
-                            <h3 className="font-bold text-xl mb-2">Trusted Platform</h3>
-                            <p>Thousands of users trust QuestWork for their tasks.</p>
+            <div className='flex justify-center items-center mt-14'>
+                <h2 className='text-3xl font-bold'>Reviews from our clients</h2>
+            </div>
+            <section className='flex gap-5 mb-16'>
+
+                <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md dark:divide-gray-500 bg-gray-200 dark:text-gray-800">
+                    <div className="flex justify-between p-4">
+                        <div className="flex space-x-4">
+                            <div>
+                                <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" />
+                            </div>
+                            <div>
+                                <h4 className="font-bold">Leroy Jenkins</h4>
+                                <span className="text-xs dark:text-gray-600">3 days ago</span>
+                            </div>
                         </div>
-                        <div className="p-6 bg-white rounded-lg shadow-md text-center">
-                            <h3 className="font-bold text-xl mb-2">Instant Matching</h3>
-                            <p>Get connected with freelancers instantly.</p>
+                        <div className="rating">
+                            <input type="radio" name="rating-4" className="mask mask-star-2 bg-orange-400" aria-label="1 star" />
+                            <input type="radio" name="rating-4" className="mask mask-star-2 bg-orange-400" aria-label="2 star" />
+                            <input type="radio" name="rating-4" className="mask mask-star-2 bg-orange-400" aria-label="3 star" />
+                            <input type="radio" name="rating-4" className="mask mask-star-2 bg-orange-400" aria-label="4 star" defaultChecked />
+                            <input type="radio" name="rating-4" className="mask mask-star-2 bg-orange-400" aria-label="5 star" />
                         </div>
-                        <div className="p-6 bg-white rounded-lg shadow-md text-center">
-                            <h3 className="font-bold text-xl mb-2">Easy to Use</h3>
-                            <p>Post, Browse, and Bid seamlessly with our platform.</p>
+                    </div>
+                    <div className="p-4 space-y-2 text-sm dark:text-gray-600">
+                        <p>This platform made finding freelance work so easy and efficient. I love the user-friendly interface!</p>
+                        <p>Definitely a game-changer for anyone looking to work independently.</p>
+                    </div>
+                </div>
+
+
+                <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md dark:divide-gray-500 bg-gray-200 dark:text-gray-800">
+                    <div className="flex justify-between p-4">
+                        <div className="flex space-x-4">
+                            <div>
+                                <img src="https://images.unsplash.com/photo-1701615004837-40d8573b6652?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" />
+                            </div>
+                            <div>
+                                <h4 className="font-bold">Sophia Martinez</h4>
+                                <span className="text-xs dark:text-gray-600">21 hours ago</span>
+                            </div>
                         </div>
+                        <div className="rating">
+                            <input type="radio" name="rating-5" className="mask mask-star-2 bg-orange-400" aria-label="1 star" />
+                            <input type="radio" name="rating-5" className="mask mask-star-2 bg-orange-400" aria-label="2 star" />
+                            <input type="radio" name="rating-5" className="mask mask-star-2 bg-orange-400" aria-label="3 star" />
+                            <input type="radio" name="rating-5" className="mask mask-star-2 bg-orange-400" aria-label="4 star" />
+                            <input type="radio" name="rating-5" className="mask mask-star-2 bg-orange-400" aria-label="5 star" defaultChecked />
+                        </div>
+                    </div>
+                    <div className="p-4 space-y-2 text-sm dark:text-gray-600">
+                        <p>I faced a few bugs while posting my task, but the support team responded quickly and fixed it.</p>
+                        <p>I appreciate the effort. Looking forward to new features!</p>
+                    </div>
+                </div>
+
+
+                <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md dark:divide-gray-500 bg-gray-200 dark:text-gray-800">
+                    <div className="flex justify-between p-4">
+                        <div className="flex space-x-4">
+                            <div>
+                                <img src="https://plus.unsplash.com/premium_photo-1688572454849-4348982edf7d?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" />
+                            </div>
+                            <div>
+                                <h4 className="font-bold">Emma Johnson</h4>
+                                <span className="text-xs dark:text-gray-600">2 days ago</span>
+                            </div>
+                        </div>
+                        <div className="rating">
+                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" aria-label="1 star" />
+                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" aria-label="2 star" />
+                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" aria-label="3 star" />
+                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" aria-label="4 star" defaultChecked />
+                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" aria-label="5 star" />
+                        </div>
+                    </div>
+                    <div className="p-4 space-y-2 text-sm dark:text-gray-600">
+                        <p>The bidding system is fair and transparent. I got my first task within a day of signing up.</p>
+                        <p>Could use some improvements in the notification system, but overall very solid.</p>
                     </div>
                 </div>
             </section>
+
 
 
         </div>

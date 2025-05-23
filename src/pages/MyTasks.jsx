@@ -45,6 +45,7 @@ const MyTasks = () => {
                     <thead>
                         <tr className='text-center'>
                             <th>Title</th>
+                            <th>Category</th>
                             <th>Deadline</th>
                             <th>Budget</th>
                             <th>Actions</th>
@@ -54,6 +55,7 @@ const MyTasks = () => {
                         {tasks.map(task => (
                             <tr key={task._id}>
                                 <td>{task.title}</td>
+                                <td>{task.category}</td>
                                 <td>{task.deadline}</td>
                                 <td>${task.budget}</td>
                                 <td className="space-x-2">
