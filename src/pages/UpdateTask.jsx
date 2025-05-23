@@ -16,7 +16,7 @@ const UpdateTask = () => {
         const formData = new FormData(form);
         const updatedTask = Object.fromEntries(formData.entries());
 
-        fetch(`http://localhost:3000/tasks/${_id}`, {
+        fetch(`https://quest-work-server.vercel.app/tasks/${_id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'

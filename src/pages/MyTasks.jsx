@@ -8,7 +8,7 @@ const MyTasks = () => {
 
     useEffect(() => {
         if (user?.email) {
-            fetch(`http://localhost:3000/tasks?email=${user.email}`)
+            fetch(`https://quest-work-server.vercel.app/tasks?email=${user.email}`)
                 .then(res => res.json())
                 .then(data => setTasks(data))
                 .catch(err => console.error("Error fetching my tasks:", err));
@@ -19,7 +19,7 @@ const MyTasks = () => {
         const confirmDelete = window.confirm('Are you sure you want to delete this task?');
         if (!confirmDelete) return;
 
-        fetch(`http://localhost:3000/tasks/${id}`, {
+        fetch(`https://quest-work-server.vercel.app/tasks/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())

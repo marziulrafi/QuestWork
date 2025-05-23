@@ -15,7 +15,7 @@ const AddTask = () => {
         newTask.email = user?.email;
         newTask.username = user?.displayName;
 
-        fetch('http://localhost:3000/tasks', {
+        fetch('https://quest-work-server.vercel.app/tasks', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

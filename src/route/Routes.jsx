@@ -13,6 +13,10 @@ import MyTasks from "../pages/MyTasks";
 import TaskDetails from "../pages/TaskDetails";
 import UpdateTask from "../pages/UpdateTask";
 import NotFound from "../components/NotFound";
+import TaskBids from "../pages/TaskBids";
+
+
+
 
 const router = createBrowserRouter([
     {
@@ -37,7 +41,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/browse-tasks",
-                loader: () => fetch('http://localhost:3000/tasks'),
+                loader: () => fetch('https://quest-work-server.vercel.app/tasks'),
                 element: <PrivateRoute><BrowseTasks /></PrivateRoute>
             },
             {
@@ -46,17 +50,17 @@ const router = createBrowserRouter([
             },
             {
                 path: "/task/:id",
-                loader: ({ params }) => fetch(`http://localhost:3000/tasks/${params.id}`),
+                loader: ({ params }) => fetch(`https://quest-work-server.vercel.app/tasks/${params.id}`),
                 element: <PrivateRoute><TaskDetails /></PrivateRoute>
             },
             {
                 path: "/update/:id",
-                loader: ({ params }) => fetch(`http://localhost:3000/tasks/${params.id}`),
+                loader: ({ params }) => fetch(`https://quest-work-server.vercel.app/tasks/${params.id}`),
                 element: <PrivateRoute><UpdateTask /></PrivateRoute>
             },
             {
-                path: "/bids/:id",
-                element: <PrivateRoute><div className="text-center mt-20 text-xl">Bids Page</div></PrivateRoute>
+                path: "/bids/:taskId",
+                element: <PrivateRoute><TaskBids /></PrivateRoute>
             },
             {
                 path: '/*',

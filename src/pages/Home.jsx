@@ -8,7 +8,7 @@ const Home = () => {
     const [featuredTasks, setFeaturedTasks] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:3000/featured-tasks')
+        fetch('https://quest-work-server.vercel.app/featured-tasks')
             .then((res) => res.json())
             .then((data) => setFeaturedTasks(data))
             .catch((error) => console.error(error));
