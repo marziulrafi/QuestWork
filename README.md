@@ -11,5 +11,3 @@ QuestWork is a modern freelance task marketplace that connects clients with skil
 - 📬 **Bid Management:** Freelancers can submit bids, and clients can view all the bids submitted for their tasks.
 - 🎨 **Responsive UI with Tailwind CSS:** The website is fully responsive and visually optimized for both desktop and mobile devices.
 - ⚙️ **Protected Routes & Role-Based Access:** Only logged-in users can access protected features, ensuring security and role-specific visibility.
-
----
