@@ -1,12 +1,15 @@
-# React + Vite
+# QuestWork – Freelance Task Marketplace
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+QuestWork is a modern freelance task marketplace that connects clients with skilled freelancers across various categories. Users can post tasks, bid on them, and manage their workflow easily and securely.
 
-Currently, two official plugins are available:
+🔗 **Live Site URL:** [QuestWork Live Demo](https://marziul-questwork.web.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- 🔐 **Authentication System:** Users can register, log in, and manage their profiles securely using Firebase Authentication.
+- 📝 **Task Posting & Browsing:** Clients can post tasks with deadlines and budgets, and freelancers can explore and bid on available tasks.
+- 📬 **Bid Management:** Freelancers can submit bids, and clients can view all the bids submitted for their tasks.
+- 🎨 **Responsive UI with Tailwind CSS:** The website is fully responsive and visually optimized for both desktop and mobile devices.
+- ⚙️ **Protected Routes & Role-Based Access:** Only logged-in users can access protected features, ensuring security and role-specific visibility.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
