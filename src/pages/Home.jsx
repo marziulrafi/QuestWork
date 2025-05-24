@@ -17,7 +17,6 @@ const Home = () => {
     return (
         <div className='px-4 space-y-12'>
 
-
             <Swiper
                 spaceBetween={30}
                 slidesPerView={1}
@@ -78,11 +77,11 @@ const Home = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                         {featuredTasks.length > 0 ? (
                             featuredTasks.map((task) => (
-                                <div key={task._id} className="bg-green-200 p-5 rounded-xl shadow-md hover:shadow-lg transition-all">
-                                    <h3 className="font-semibold text-xl mb-2">{task.title}</h3>
-                                    <p className="text-gray-600">{task.description.substring(0, 80)}...</p>
-                                    <p className="font-bold mt-2">💰 ${task.budget}</p>
-                                    <p className="text-sm text-gray-600">⏳ {task.deadline}</p>
+                                <div key={task._id} className="bg-sky-600 p-5 rounded-xl shadow-md hover:shadow-lg transition-all">
+                                    <h3 className="font-semibold text-base-content text-xl mb-2">{task.title}</h3>
+                                    <p className="text-base-content">{task.description.substring(0, 80)}...</p>
+                                    <p className="font-bold text-base-content mt-2">💰 ${task.budget}</p>
+                                    <p className="text-sm text-base-content">⏳ {task.deadline}</p>
                                     <Link
                                         to={`/task/${task._id}`}
                                         className="btn mt-8 flex items-center text-center font-bold"
@@ -102,17 +101,17 @@ const Home = () => {
                 <h2 className="text-3xl font-bold text-center mt-16 mb-8">How It Works</h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 my-16">
-                    <div className="bg-purple-100 p-6 rounded-lg text-center">
+                    <div className="bg-purple-400 p-6 rounded-lg text-center">
                         <img src="https://img.icons8.com/?size=128&id=0prbldgxVuTl&format=png" alt="" className="w-16 h-16 mx-auto mb-4" />
-                        <h3 className="font-bold text-xl mb-2">Create an Account</h3>
-                        <p>Sign up for free and join our growing freelance community.</p>
+                        <h3 className="font-bold text-xl mb-2 text-base-content">Create an Account</h3>
+                        <p className='text-base-content'>Sign up for free and join our growing freelance community.</p>
                     </div>
-                    <div className="bg-indigo-100 p-6 rounded-lg text-center">
+                    <div className="bg-indigo-400 p-6 rounded-lg text-center">
                         <img src="https://img.icons8.com/?size=48&id=bG85sXmXRhPG&format=png" alt="Apply" className="w-16 h-16 mx-auto mb-4" />
                         <h3 className="font-bold text-xl mb-2">Apply for Tasks</h3>
                         <p>Browse available tasks and bid on ones that suit your expertise.</p>
                     </div>
-                    <div className="bg-orange-100 p-6 rounded-lg text-center">
+                    <div className="bg-orange-400 p-6 rounded-lg text-center">
                         <img src="https://img.icons8.com/?size=96&id=32747&format=png" alt="Complete" className="w-16 h-16 mx-auto mb-4" />
                         <h3 className="font-bold text-xl mb-2">Complete and Earn</h3>
                         <p>Deliver quality work and get paid quickly and securely.</p>
@@ -124,7 +123,8 @@ const Home = () => {
             <div className='flex justify-center items-center mt-14'>
                 <h2 className='text-3xl font-bold'>Reviews from our clients</h2>
             </div>
-            <section className='flex gap-5 mb-16'>
+
+            <section className='flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap gap-5 mb-16 items-center lg:items-stretch justify-center'>
 
                 <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md dark:divide-gray-500 bg-gray-200 dark:text-gray-800">
                     <div className="flex justify-between p-4">
@@ -151,7 +151,6 @@ const Home = () => {
                     </div>
                 </div>
 
-
                 <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md dark:divide-gray-500 bg-gray-200 dark:text-gray-800">
                     <div className="flex justify-between p-4">
                         <div className="flex space-x-4">
@@ -177,7 +176,6 @@ const Home = () => {
                     </div>
                 </div>
 
-
                 <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md dark:divide-gray-500 bg-gray-200 dark:text-gray-800">
                     <div className="flex justify-between p-4">
                         <div className="flex space-x-4">
@@ -202,7 +200,9 @@ const Home = () => {
                         <p>Could use some improvements in the notification system, but overall very solid.</p>
                     </div>
                 </div>
+
             </section>
+
 
 
 

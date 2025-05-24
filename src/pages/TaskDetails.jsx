@@ -53,26 +53,27 @@ const TaskDetails = () => {
     };
 
     return (
-        <div className="max-w-3xl mx-auto mt-6 p-6 bg-white shadow rounded">
+        <div className="max-w-3xl mx-auto mt-6 p-6 bg-base-100 shadow rounded text-base-content">
             {user && (
-                <p className="text-lg font-medium text-green-600 mb-4">
+                <p className="text-lg font-medium text-success mb-4">
                     You bid for {bidsCount} opportunities.
                 </p>
             )}
+
             {task ? (
                 <div>
                     <h2 className="text-2xl font-bold mb-4">Task Details</h2>
-                    <p><strong>Title:</strong> {task.title}</p>
-                    <p><strong>Category:</strong> {task.category}</p>
-                    <p><strong>Description:</strong> {task.description}</p>
-                    <p><strong>Deadline:</strong> {task.deadline}</p>
-                    <p><strong>Budget:</strong> ${task.budget}</p>
-                    <p><strong>Posted by:</strong> {task.username} ({task.email})</p>
+                    <p><span className="font-semibold">Title:</span> {task.title}</p>
+                    <p><span className="font-semibold">Category:</span> {task.category}</p>
+                    <p><span className="font-semibold">Description:</span> {task.description}</p>
+                    <p><span className="font-semibold">Deadline:</span> {task.deadline}</p>
+                    <p><span className="font-semibold">Budget:</span> ${task.budget}</p>
+                    <p><span className="font-semibold">Posted by:</span> {task.username} ({task.email})</p>
 
                     <button
                         onClick={handleBid}
                         disabled={isBidding}
-                        className="mt-6 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                        className="mt-6 bg-primary text-primary-content px-4 py-2 rounded hover:bg-primary-focus"
                     >
                         {isBidding ? "Bidding..." : "Bid"}
                     </button>

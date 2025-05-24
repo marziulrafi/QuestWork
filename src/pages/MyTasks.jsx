@@ -1,6 +1,7 @@
 import React, { use, useState, useEffect } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import { Link } from 'react-router';
+import Swal from 'sweetalert2';
 
 const MyTasks = () => {
     const { user } = use(AuthContext);
@@ -16,25 +17,34 @@ const MyTasks = () => {
     }, [user]);
 
     const handleDelete = (id) => {
-        const confirmDelete = window.confirm('Are you sure you want to delete this task?');
-        if (!confirmDelete) return;
-
-        fetch(`https://quest-work-server.vercel.app/tasks/${id}`, {
-            method: 'DELETE',
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.deletedCount > 0) {
-                    alert('Task deleted successfully!');
-                    setTasks(prevTasks => prevTasks.filter(task => task._id !== id));
-                } else {
-                    alert('Failed to delete the task.');
-                }
-            })
-            .catch(error => {
-                console.error('Error deleting task:', error);
-                alert('An error occurred while deleting the task.');
-            });
+        Swal.fire({
+            title: 'Are you sure?',
+            text: 'You won\'t be able to revert this!',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`https://quest-work-server.vercel.app/tasks/${id}`, {
+                    method: 'DELETE',
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount > 0) {
+                            setTasks(prevTasks => prevTasks.filter(task => task._id !== id));
+                            Swal.fire('Deleted!', 'Your task has been deleted.', 'success');
+                        } else {
+                            Swal.fire('Failed', 'Could not delete the task.', 'error');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error deleting task:', error);
+                        Swal.fire('Error', 'An error occurred while deleting the task.', 'error');
+                    });
+            }
+        });
     };
 
     return (

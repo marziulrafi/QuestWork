@@ -37,7 +37,7 @@ const AddTask = () => {
     return (
         <div className="max-w-3xl mx-auto px-4 py-10">
             <h2 className="text-3xl font-bold mb-6 text-center">📝 Post a New Task</h2>
-            <form onSubmit={handleAddTask} className="bg-white p-6 rounded-xl shadow-md space-y-5">
+            <form onSubmit={handleAddTask} className="bg-base-200 p-6 rounded-xl shadow-md space-y-5">
                 <input type="text" name="title" placeholder="Task Title" required className="input input-bordered w-full" />
                 <textarea name="description" rows="4" placeholder="Task Description" required className="textarea textarea-bordered w-full"></textarea>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -54,8 +54,8 @@ const AddTask = () => {
                     <option>Video Editing</option>
                     <option>Other</option>
                 </select>
-                <input type="email" value={user?.email || ''} readOnly className="input input-bordered w-full bg-gray-100" />
-                <input type="text" value={user?.displayName || ''} readOnly className="input input-bordered w-full bg-gray-100" />
+                <input type="email" value={user?.email || ''} readOnly className="input input-bordered w-full bg-base-100" />
+                <input type="text" value={user?.displayName || ''} readOnly className="input input-bordered w-full bg-base-100" />
                 <button type="submit" className="btn btn-primary w-full">🚀 Post Task</button>
             </form>
         </div>
