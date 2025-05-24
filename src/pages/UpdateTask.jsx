@@ -39,7 +39,7 @@ const UpdateTask = () => {
     };
 
     return (
-        <div className="max-w-3xl mx-auto p-6 mt-6 bg-white shadow rounded">
+        <div className="max-w-3xl mx-auto p-6 mt-6 bg-base-100 shadow rounded">
             <h2 className="text-2xl font-bold mb-4">Update Task</h2>
             <form onSubmit={handleUpdateTask} className="space-y-4">
                 <input
@@ -80,8 +80,8 @@ const UpdateTask = () => {
                     className="input input-bordered w-full"
                     required
                 />
-                <input type="email" value={user?.email || ''} readOnly className="input input-bordered w-full bg-gray-100" />
-                <input type="text" value={user?.displayName || ''} readOnly className="input input-bordered w-full bg-gray-100" />
+                <input type="email" value={user?.email || ''} readOnly className="input input-bordered w-full bg-base-100" />
+                <input type="text" value={user?.displayName || ''} readOnly className="input input-bordered w-full bg-base-100" />
                 <button type="submit" className="btn btn-primary w-full">Update Task</button>
             </form>
         </div>

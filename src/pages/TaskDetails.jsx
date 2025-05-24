@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router';
 import { AuthContext } from '../provider/AuthProvider';
 import Loading from '../components/Loading';
+import Swal from 'sweetalert2';
 
 const TaskDetails = () => {
     const task = useLoaderData();
@@ -43,7 +44,13 @@ const TaskDetails = () => {
             .then(res => res.json())
             .then(() => {
                 setBidsCount(prev => prev + 1);
-                alert("Bid placed successfully!");
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Successfully Bidded",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
             })
             .catch(err => {
                 console.error("Error placing bid:", err);
@@ -73,7 +80,7 @@ const TaskDetails = () => {
                     <button
                         onClick={handleBid}
                         disabled={isBidding}
-                        className="mt-6 bg-primary text-primary-content px-4 py-2 rounded hover:bg-primary-focus"
+                        className="mt-6 bg-primary cursor-pointer text-primary-content px-4 py-2 rounded hover:bg-primary-focus"
                     >
                         {isBidding ? "Bidding..." : "Bid"}
                     </button>

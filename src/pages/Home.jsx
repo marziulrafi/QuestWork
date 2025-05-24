@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Autoplay } from 'swiper/modules';
+import { Typewriter } from 'react-simple-typewriter';
 
 const Home = () => {
     const [featuredTasks, setFeaturedTasks] = useState([]);
@@ -16,6 +17,24 @@ const Home = () => {
 
     return (
         <div className='px-4 space-y-12'>
+
+            <div className="text-center mt-2">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-indigo-700">
+                    <Typewriter
+                        words={[
+                            'Find your next freelance task!',
+                            'Post your task and get it done fast!',
+                            'Trusted by thousands of task posters!',
+                        ]}
+                        loop={true}
+                        cursor
+                        cursorStyle='_'
+                        typeSpeed={70}
+                        deleteSpeed={50}
+                        delaySpeed={1000}
+                    />
+                </h1>
+            </div>
 
             <Swiper
                 spaceBetween={30}
