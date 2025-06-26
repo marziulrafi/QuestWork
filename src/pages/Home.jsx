@@ -46,7 +46,7 @@ const Home = () => {
             >
                 <SwiperSlide>
                     <div
-                        className="relative w-full h-[500px] bg-cover bg-center flex items-center justify-center"
+                        className="relative w-full h-[70vh] bg-cover bg-center flex items-center justify-center"
                         style={{
                             backgroundImage: `url('https://images.unsplash.com/photo-1604933762023-7213af7ff7a7?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`
                         }}
@@ -91,7 +91,7 @@ const Home = () => {
             </Swiper>
 
             <section>
-                <div className="my-16">
+                <div data-aos="zoom-in" className="my-16">
                     <h2 className="text-3xl text-center font-bold mb-10">Featured Tasks</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                         {featuredTasks.length > 0 ? (
@@ -116,27 +116,41 @@ const Home = () => {
                 </div>
             </section>
 
-            <section>
-                <h2 className="text-3xl font-bold text-center mt-16 mb-8">How It Works</h2>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 my-16">
-                    <div className="bg-purple-400 p-6 rounded-lg text-center">
-                        <img src="https://img.icons8.com/?size=128&id=0prbldgxVuTl&format=png" alt="" className="w-16 h-16 mx-auto mb-4" />
-                        <h3 className="font-bold text-xl mb-2 text-base-content">Create an Account</h3>
-                        <p className='text-base-content'>Sign up for free and join our growing freelance community.</p>
-                    </div>
-                    <div className="bg-indigo-400 p-6 rounded-lg text-center">
-                        <img src="https://img.icons8.com/?size=48&id=bG85sXmXRhPG&format=png" alt="Apply" className="w-16 h-16 mx-auto mb-4" />
-                        <h3 className="font-bold text-xl mb-2">Apply for Tasks</h3>
-                        <p>Browse available tasks and bid on ones that suit your expertise.</p>
-                    </div>
-                    <div className="bg-orange-400 p-6 rounded-lg text-center">
-                        <img src="https://img.icons8.com/?size=96&id=32747&format=png" alt="Complete" className="w-16 h-16 mx-auto mb-4" />
-                        <h3 className="font-bold text-xl mb-2">Complete and Earn</h3>
-                        <p>Deliver quality work and get paid quickly and securely.</p>
-                    </div>
-                </div>
+            <section
+                className="bg-sky-100 dark:bg-sky-900 text-sky-900 dark:text-sky-100 text-center py-10 rounded-xl shadow-md"
+                data-aos="fade-right"
+            >
+                <h2 className="text-3xl font-bold mb-2">🎉 Special Offer This Month!</h2>
+                <p className="text-lg">Get 50% off your first task posting. Limited time only.</p>
+                <Link
+                    to="/add-task"
+                    className="btn mt-4 bg-yellow-500 hover:bg-yellow-600 text-white border-none"
+                >
+                    Post a Task Now
+                </Link>
             </section>
+
+            
+            <section
+                className="bg-sky-50 dark:bg-sky-950 text-sky-900 dark:text-sky-100 rounded-xl p-10 text-center mt-12 mb-20 shadow-md"
+                data-aos="fade-left"
+            >
+                <h2 className="text-3xl font-bold mb-4">Subscribe to Our Newsletter</h2>
+                <p className="mb-6">Stay updated with the latest freelance opportunities and promotions.</p>
+
+                <form className="flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto">
+                    <input
+                        type="email"
+                        placeholder="Enter your email"
+                        className="input input-bordered w-full bg-white dark:bg-sky-900 text-sky-900 dark:text-white placeholder-sky-400 dark:placeholder-sky-300"
+                        required
+                    />
+                    <button type="submit" className="btn btn-primary">
+                        Subscribe
+                    </button>
+                </form>
+            </section>
+
 
 
             <div className='flex justify-center items-center mt-14'>
