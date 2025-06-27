@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Autoplay } from 'swiper/modules';
 import { Typewriter } from 'react-simple-typewriter';
+import About from '../components/About';
 
 const Home = () => {
     const [featuredTasks, setFeaturedTasks] = useState([]);
@@ -93,12 +94,12 @@ const Home = () => {
             <section>
                 <div data-aos="zoom-in" className="my-16">
                     <h2 className="text-3xl text-center font-bold mb-10">Featured Tasks</h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                         {featuredTasks.length > 0 ? (
-                            featuredTasks.map((task) => (
-                                <div key={task._id} className="bg-sky-600 p-5 rounded-xl shadow-md hover:shadow-lg transition-all">
+                            featuredTasks.slice(0, 4).map((task) => (
+                                <div key={task._id} className="bg-sky-600 p-5 rounded-xl shadow-md hover:shadow-lg transition-all duration-500">
                                     <h3 className="font-semibold text-base-content text-xl mb-2">{task.title}</h3>
-                                    <p className="text-base-content">{task.description.substring(0, 80)}...</p>
+                                    <p className="text-base-content">{task.description.substring(0, 70)}...</p>
                                     <p className="font-bold text-base-content mt-2">💰 ${task.budget}</p>
                                     <p className="text-sm text-base-content">⏳ {task.deadline}</p>
                                     <Link
@@ -116,6 +117,7 @@ const Home = () => {
                 </div>
             </section>
 
+
             <section
                 className="bg-sky-100 dark:bg-sky-900 text-sky-900 dark:text-sky-100 text-center py-10 rounded-xl shadow-md"
                 data-aos="fade-right"
@@ -129,29 +131,6 @@ const Home = () => {
                     Post a Task Now
                 </Link>
             </section>
-
-            
-            <section
-                className="bg-sky-50 dark:bg-sky-950 text-sky-900 dark:text-sky-100 rounded-xl p-10 text-center mt-12 mb-20 shadow-md"
-                data-aos="fade-left"
-            >
-                <h2 className="text-3xl font-bold mb-4">Subscribe to Our Newsletter</h2>
-                <p className="mb-6">Stay updated with the latest freelance opportunities and promotions.</p>
-
-                <form className="flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto">
-                    <input
-                        type="email"
-                        placeholder="Enter your email"
-                        className="input input-bordered w-full bg-white dark:bg-sky-900 text-sky-900 dark:text-white placeholder-sky-400 dark:placeholder-sky-300"
-                        required
-                    />
-                    <button type="submit" className="btn btn-primary">
-                        Subscribe
-                    </button>
-                </form>
-            </section>
-
-
 
             <div className='flex justify-center items-center mt-14'>
                 <h2 className='text-3xl font-bold'>Reviews from our clients</h2>
@@ -236,6 +215,9 @@ const Home = () => {
 
             </section>
 
+
+
+            <About />
 
 
 

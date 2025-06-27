@@ -14,6 +14,8 @@ import TaskDetails from "../pages/TaskDetails";
 import UpdateTask from "../pages/UpdateTask";
 import NotFound from "../components/NotFound";
 import TaskBids from "../pages/TaskBids";
+import Dashboard from "../pages/Dashboard";
+import DashboardLayout from "../layouts/DashboardLayout";
 
 
 
@@ -42,7 +44,7 @@ const router = createBrowserRouter([
             {
                 path: "/browse-tasks",
                 loader: () => fetch('https://quest-work-server.vercel.app/tasks'),
-                element: <PrivateRoute><BrowseTasks /></PrivateRoute>
+                element: <BrowseTasks />
             },
             {
                 path: "/my-tasks",
@@ -68,6 +70,17 @@ const router = createBrowserRouter([
             }
         ]
     },
+
+    {
+        path: '/dashboard',
+        element: <PrivateRoute><DashboardLayout /></PrivateRoute>,
+        children: [
+            { path: 'overview', element: <Dashboard /> },
+            { path: 'add-task', element: <AddTask /> },
+            { path: 'my-tasks', element: <MyTasks /> },
+            { path: 'browse-tasks', element: <BrowseTasks /> },
+        ]
+    }
 ]);
 
 export default router;
