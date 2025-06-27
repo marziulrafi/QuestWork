@@ -24,6 +24,11 @@ const Navbar = () => {
         <>
             <li><NavLink to="/" className="font-semibold">Home</NavLink></li>
             <li><NavLink to="/browse-tasks" className="font-semibold">All Tasks</NavLink></li>
+
+            {user && (
+                <li><NavLink to="/dashboard/overview" className="font-semibold">Dashboard</NavLink></li>
+            )}
+
             <li>
                 <button
                     className="font-semibold"
@@ -35,9 +40,7 @@ const Navbar = () => {
                     About Us
                 </button>
             </li>
-            {user && (
-                <li><NavLink to="/dashboard/overview" className="font-semibold">Dashboard</NavLink></li>
-            )}
+
         </>
     );
     const authLinks = (

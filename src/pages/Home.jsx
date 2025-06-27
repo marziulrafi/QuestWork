@@ -132,6 +132,9 @@ const Home = () => {
                 </Link>
             </section>
 
+
+            <About />
+
             <div className='flex justify-center items-center mt-14'>
                 <h2 className='text-3xl font-bold'>Reviews from our clients</h2>
             </div>
@@ -214,12 +217,6 @@ const Home = () => {
                 </div>
 
             </section>
-
-
-
-            <About />
-
-
 
         </div>
     );
