@@ -70,13 +70,13 @@ QuestWork bridges the gap between task providers and freelancers by offering a p
 ### 📁 Setup Instructions
 
 1. **Clone the Repository**
-   ```bash
-   git clone [https://github.com/marziulrafi/QuestWork.git](https://github.com/marziulrafi/QuestWork.git)
-   cd QuestWork
+   ```bash
+   git clone https://github.com/marziulrafi/QuestWork.git
+   cd PickBetter
 2. **Install Dependencies**
-   ```bash
-   npm install
+   ```bash
+   npm install
 3. **Firebase Configuration**
 4. **Start the Development Server**
-   ```bash
-   npm run dev
+   ```bash
+   npm run dev
